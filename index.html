@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Smart Campus Room Availability Checker</title>
+    <link rel="stylesheet" href="/style.css" />
+    <meta property="og:image" content="https://bolt.new/static/og_default.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://bolt.new/static/og_default.png">
+  </head>
+  <body>
+    <div class="page">
+      <main class="card">
+        <header class="card-header">
+          <h1>Room Availability Checker</h1>
+          <p class="subtitle">Smart Campus &middot; Room 301</p>
+        </header>
+
+        <section class="room-info">
+          <div class="info-row">
+            <span class="info-label">Current time</span>
+            <span class="info-value" id="now-display">09:00</span>
+          </div>
+          <div class="info-row">
+            <span class="info-label">Room blocked</span>
+            <label class="switch">
+              <input type="checkbox" id="blocked-toggle" />
+              <span class="switch-track"><span class="switch-thumb"></span></span>
+            </label>
+          </div>
+        </section>
+
+        <section class="bookings">
+          <h2>Existing bookings</h2>
+          <ul id="bookings-list" class="bookings-list"></ul>
+        </section>
+
+        <section class="check-form">
+          <h2>Check a time</h2>
+          <div class="time-fields">
+            <div class="field">
+              <label for="start-time">Start time</label>
+              <input type="time" id="start-time" value="09:30" />
+            </div>
+            <div class="field">
+              <label for="end-time">End time</label>
+              <input type="time" id="end-time" value="10:30" />
+            </div>
+          </div>
+          <button id="check-btn" type="button">Check availability</button>
+        </section>
+
+        <section id="result" class="result" hidden>
+          <span class="result-icon" id="result-icon"></span>
+          <div class="result-body">
+            <h3 id="result-title"></h3>
+            <p id="result-message"></p>
+          </div>
+        </section>
+      </main>
+    </div>
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>
