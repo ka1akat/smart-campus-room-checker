@@ -43,3 +43,8 @@ export function canBook(start, end, now, blocked, existing) {
   }
   return { canBook: true, reason: null };
 }
+
+/** Checks a time against one room, always using that room's own status and bookings. */
+export function checkRoom(room, start, end, now) {
+  return canBook(start, end, now, room.blocked, room.bookings);
+}
