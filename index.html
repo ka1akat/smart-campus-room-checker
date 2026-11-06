@@ -15,42 +15,54 @@
       <main class="card">
         <header class="card-header">
           <h1>Room Availability Checker</h1>
-          <p class="subtitle">Smart Campus &middot; Room 301</p>
+          <p class="subtitle">Smart Campus &middot; Room catalog</p>
         </header>
 
         <section class="room-info">
           <div class="info-row">
             <span class="info-label">Current time</span>
-            <span class="info-value" id="now-display">09:00</span>
-          </div>
-          <div class="info-row">
-            <span class="info-label">Room blocked</span>
-            <label class="switch">
-              <input type="checkbox" id="blocked-toggle" />
-              <span class="switch-track"><span class="switch-thumb"></span></span>
-            </label>
+            <span class="info-value" id="now-display"></span>
           </div>
         </section>
 
-        <section class="bookings">
-          <h2>Existing bookings</h2>
-          <ul id="bookings-list" class="bookings-list"></ul>
+        <section class="requirements">
+          <h2>Your requirements</h2>
+          <div class="field">
+            <label for="attendees">Attendees</label>
+            <input type="number" id="attendees" min="1" step="1" inputmode="numeric" placeholder="Any" />
+          </div>
+          <fieldset class="equipment">
+            <legend>Required equipment</legend>
+            <div id="equipment-options" class="equipment-options"></div>
+          </fieldset>
         </section>
 
-        <section class="check-form">
-          <h2>Check a time</h2>
-          <div class="time-fields">
-            <div class="field">
-              <label for="start-time">Start time</label>
-              <input type="time" id="start-time" value="09:30" />
-            </div>
-            <div class="field">
-              <label for="end-time">End time</label>
-              <input type="time" id="end-time" value="10:30" />
-            </div>
-          </div>
-          <button id="check-btn" type="button">Check availability</button>
+        <section class="rooms">
+          <h2>Matching rooms</h2>
+          <ul id="rooms-list" class="rooms-list" aria-live="polite"></ul>
         </section>
+
+        <div id="room-details">
+          <section class="bookings">
+            <h2>Existing bookings: <span id="selected-room-name"></span></h2>
+            <ul id="bookings-list" class="bookings-list"></ul>
+          </section>
+
+          <section class="check-form">
+            <h2>Check a time</h2>
+            <div class="time-fields">
+              <div class="field">
+                <label for="start-time">Start time</label>
+                <input type="time" id="start-time" value="09:30" />
+              </div>
+              <div class="field">
+                <label for="end-time">End time</label>
+                <input type="time" id="end-time" value="10:30" />
+              </div>
+            </div>
+            <button id="check-btn" type="button">Check availability</button>
+          </section>
+        </div>
 
         <section id="result" class="result" hidden>
           <span class="result-icon" id="result-icon"></span>
