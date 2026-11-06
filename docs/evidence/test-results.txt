@@ -1,0 +1,308 @@
+
+> vite-starter@0.0.0 test
+> node --test
+
+TAP version 13
+# Subtest: AC4 touching the end of a booking is available
+ok 1 - AC4 touching the end of a booking is available
+  ---
+  duration_ms: 0.873641
+  type: 'test'
+  ...
+# Subtest: AC4 touching the start of a booking is available
+ok 2 - AC4 touching the start of a booking is available
+  ---
+  duration_ms: 0.165709
+  type: 'test'
+  ...
+# Subtest: AC4 overlapping by part of a booking is unavailable
+ok 3 - AC4 overlapping by part of a booking is unavailable
+  ---
+  duration_ms: 0.096444
+  type: 'test'
+  ...
+# Subtest: AC4 one-minute overlap at the end is unavailable
+ok 4 - AC4 one-minute overlap at the end is unavailable
+  ---
+  duration_ms: 0.07113
+  type: 'test'
+  ...
+# Subtest: AC4 one-minute overlap at the start is unavailable
+ok 5 - AC4 one-minute overlap at the start is unavailable
+  ---
+  duration_ms: 0.086404
+  type: 'test'
+  ...
+# Subtest: AC4 request inside a booking is unavailable
+ok 6 - AC4 request inside a booking is unavailable
+  ---
+  duration_ms: 0.070408
+  type: 'test'
+  ...
+# Subtest: AC4 request covering a booking is unavailable
+ok 7 - AC4 request covering a booking is unavailable
+  ---
+  duration_ms: 0.097771
+  type: 'test'
+  ...
+# Subtest: AC4 exact gap between two bookings is available
+ok 8 - AC4 exact gap between two bookings is available
+  ---
+  duration_ms: 0.069291
+  type: 'test'
+  ...
+# Subtest: AC4 overlap with the second booking is unavailable
+ok 9 - AC4 overlap with the second booking is unavailable
+  ---
+  duration_ms: 0.340601
+  type: 'test'
+  ...
+# Subtest: AC4 no bookings is available
+ok 10 - AC4 no bookings is available
+  ---
+  duration_ms: 0.24361
+  type: 'test'
+  ...
+# Subtest: AC3 blocked room rejects an otherwise valid request
+ok 11 - AC3 blocked room rejects an otherwise valid request
+  ---
+  duration_ms: 0.098533
+  type: 'test'
+  ...
+# Subtest: AC3 blocked room gives the blocked reason first
+ok 12 - AC3 blocked room gives the blocked reason first
+  ---
+  duration_ms: 0.123256
+  type: 'test'
+  ...
+# Subtest: AC2 exactly 120 minutes is available
+ok 13 - AC2 exactly 120 minutes is available
+  ---
+  duration_ms: 0.047264
+  type: 'test'
+  ...
+# Subtest: AC2 121 minutes is unavailable
+ok 14 - AC2 121 minutes is unavailable
+  ---
+  duration_ms: 0.037813
+  type: 'test'
+  ...
+# Subtest: AC1 starting exactly at now is unavailable
+ok 15 - AC1 starting exactly at now is unavailable
+  ---
+  duration_ms: 0.033545
+  type: 'test'
+  ...
+# Subtest: AC1 starting one minute after now is available
+ok 16 - AC1 starting one minute after now is available
+  ---
+  duration_ms: 0.033814
+  type: 'test'
+  ...
+# Subtest: AC1 starting before now is unavailable
+ok 17 - AC1 starting before now is unavailable
+  ---
+  duration_ms: 0.034694
+  type: 'test'
+  ...
+# Subtest: AC1 reversed times are unavailable
+ok 18 - AC1 reversed times are unavailable
+  ---
+  duration_ms: 0.033243
+  type: 'test'
+  ...
+# Subtest: AC1 zero length is unavailable
+ok 19 - AC1 zero length is unavailable
+  ---
+  duration_ms: 0.045728
+  type: 'test'
+  ...
+# Subtest: AC1 ending at 1440 is available
+ok 20 - AC1 ending at 1440 is available
+  ---
+  duration_ms: 0.1065
+  type: 'test'
+  ...
+# Subtest: AC1 ending after 1440 is unavailable
+ok 21 - AC1 ending after 1440 is unavailable
+  ---
+  duration_ms: 0.060083
+  type: 'test'
+  ...
+# Subtest: AC1 negative start is unavailable
+ok 22 - AC1 negative start is unavailable
+  ---
+  duration_ms: 0.048498
+  type: 'test'
+  ...
+# Subtest: AC1 non-integer times are unavailable
+ok 23 - AC1 non-integer times are unavailable
+  ---
+  duration_ms: 0.046468
+  type: 'test'
+  ...
+# Subtest: AC5 checking does not change the bookings
+ok 24 - AC5 checking does not change the bookings
+  ---
+  duration_ms: 0.511106
+  type: 'test'
+  ...
+# Subtest: catalog has at least four fictional rooms with all required fields
+ok 25 - catalog has at least four fictional rooms with all required fields
+  ---
+  duration_ms: 0.940014
+  type: 'test'
+  ...
+# Subtest: catalog room ids are unique
+ok 26 - catalog room ids are unique
+  ---
+  duration_ms: 0.236702
+  type: 'test'
+  ...
+# Subtest: F1 capacity exactly equal to attendees is kept
+ok 27 - F1 capacity exactly equal to attendees is kept
+  ---
+  duration_ms: 0.635545
+  type: 'test'
+  ...
+# Subtest: F1 capacity one below attendees is removed
+ok 28 - F1 capacity one below attendees is removed
+  ---
+  duration_ms: 0.100327
+  type: 'test'
+  ...
+# Subtest: F1 no attendee number keeps every room
+ok 29 - F1 no attendee number keeps every room
+  ---
+  duration_ms: 0.174585
+  type: 'test'
+  ...
+# Subtest: F1 invalid attendee values give an error
+ok 30 - F1 invalid attendee values give an error
+  ---
+  duration_ms: 0.145812
+  type: 'test'
+  ...
+# Subtest: F2 room must have every selected item, not just one
+ok 31 - F2 room must have every selected item, not just one
+  ---
+  duration_ms: 0.20005
+  type: 'test'
+  ...
+# Subtest: F2 no selected items keeps every room
+ok 32 - F2 no selected items keeps every room
+  ---
+  duration_ms: 0.111351
+  type: 'test'
+  ...
+# Subtest: F1 and F2 apply together
+ok 33 - F1 and F2 apply together
+  ---
+  duration_ms: 0.208118
+  type: 'test'
+  ...
+# Subtest: equipment options come from the catalog without repeats
+ok 34 - equipment options come from the catalog without repeats
+  ---
+  duration_ms: 0.420094
+  type: 'test'
+  ...
+# Subtest: F3 a blocked room is never reported as available
+ok 35 - F3 a blocked room is never reported as available
+  ---
+  duration_ms: 0.208845
+  type: 'test'
+  ...
+# Subtest: availability uses the chosen room's bookings, not another room's
+ok 36 - availability uses the chosen room's bookings, not another room's
+  ---
+  duration_ms: 0.11821
+  type: 'test'
+  ...
+# Subtest: filtering does not change or reorder the rooms
+ok 37 - filtering does not change or reorder the rooms
+  ---
+  duration_ms: 0.120548
+  type: 'test'
+  ...
+# Subtest: catalog data cannot be changed by accident
+ok 38 - catalog data cannot be changed by accident
+  ---
+  duration_ms: 0.606553
+  type: 'test'
+  ...
+# Subtest: UI starts with all rooms, one selected, and no result
+ok 39 - UI starts with all rooms, one selected, and no result
+  ---
+  duration_ms: 89.632765
+  type: 'test'
+  ...
+# Subtest: UI shows only rooms meeting the attendee number
+ok 40 - UI shows only rooms meeting the attendee number
+  ---
+  duration_ms: 19.353637
+  type: 'test'
+  ...
+# Subtest: UI shows only rooms having all selected equipment
+ok 41 - UI shows only rooms having all selected equipment
+  ---
+  duration_ms: 23.31945
+  type: 'test'
+  ...
+# Subtest: F4 UI shows a clear empty state and hides the check form
+ok 42 - F4 UI shows a clear empty state and hides the check form
+  ---
+  duration_ms: 10.167017
+  type: 'test'
+  ...
+# Subtest: UI explains an invalid attendee number
+ok 43 - UI explains an invalid attendee number
+  ---
+  duration_ms: 11.001767
+  type: 'test'
+  ...
+# Subtest: F5 switching rooms refreshes the result using the new room's bookings
+ok 44 - F5 switching rooms refreshes the result using the new room's bookings
+  ---
+  duration_ms: 16.741309
+  type: 'test'
+  ...
+# Subtest: F5 switching rooms before any check shows no result
+ok 45 - F5 switching rooms before any check shows no result
+  ---
+  duration_ms: 13.093073
+  type: 'test'
+  ...
+# Subtest: F5 switching rooms updates the listed bookings
+ok 46 - F5 switching rooms updates the listed bookings
+  ---
+  duration_ms: 19.104988
+  type: 'test'
+  ...
+# Subtest: F5 a result disappears when its room is filtered out
+ok 47 - F5 a result disappears when its room is filtered out
+  ---
+  duration_ms: 14.309917
+  type: 'test'
+  ...
+# Subtest: F3 selecting a blocked room in the UI reports it as unavailable
+ok 48 - F3 selecting a blocked room in the UI reports it as unavailable
+  ---
+  duration_ms: 11.514536
+  type: 'test'
+  ...
+# Subtest: AC6 an empty time field gives a clear message
+ok 49 - AC6 an empty time field gives a clear message
+  ---
+  duration_ms: 9.815009
+  type: 'test'
+  ...
+1..49
+# tests 49
+# suites 0
+# pass 49
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 779.863422
