@@ -31,8 +31,8 @@ it reads the result returned by the logic layer.
 
 ## 3. Setup
 
-- Node.js `^22.22.2 || ^24.15.0 || >=26.0.0` (required by jsdom 31, see `node_modules/jsdom/package.json`).
-  Note: README still says "Node.js 18 or newer" — this is a known open risk (R2), do not trust it.
+- Node.js `^22.22.2 || ^24.15.0 || >=26.0.0` (required by jsdom 31). Declared in `engines` in `package.json`,
+  pinned to 22 in `.nvmrc`; `.npmrc` has `engine-strict=true`, so `npm ci` fails fast on an older Node.
 - `npm ci` — installs exactly what `package-lock.json` lists. Use `npm ci`, not `npm install`.
 
 ## 4. Safe commands (allowed without asking)
@@ -55,11 +55,12 @@ git status / git diff / git log
 
 ## 6. Test expectations
 
-- `npm test` must pass with **0 failures** before and after every change. Baseline: 49 tests.
+- `npm test` must pass with **0 failures** before and after every change (49 tests at the Assignment 05 baseline, 57 after it).
 - Every behaviour change or bug fix adds or updates a test in `tests/`. Do not delete or weaken existing tests
   to make a change pass.
 - Rule changes go in `tests/booking.test.js` / `tests/filters.test.js`; page behaviour in `tests/ui.test.js`.
 - `npm run build` must succeed. There is no linter or type checker yet — do not claim lint results.
+- `npm audit` currently reports advisories for vite/esbuild (dev server only). Do not "fix" them without approval (see Forbidden actions).
 - Report the real command output. Never invent or summarise test results you did not run.
 
 ## 7. Forbidden actions

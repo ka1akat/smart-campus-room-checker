@@ -1,6 +1,6 @@
 # Smart Campus Room Availability Checker
 
-Software Engineering – Assignment #04 (KBTU), continuing Assignment #03
+Software Engineering – Assignment #05 (KBTU), continuing Assignments #03–#04
 Student: Zhaslan Karakat (24B031781)
 
 A one-page responsive prototype: filter a small catalog of rooms by attendees and equipment, select one, and check whether it is available for a chosen time slot. The page only **checks** availability: it does not create, save or confirm bookings. All data is fictional.
@@ -39,6 +39,7 @@ A one-page responsive prototype: filter a small catalog of rooms by attendees an
 | `src/ui/render.js` | Everything that draws on the page |
 | `src/ui/app.js` | Page state and event handling |
 | `tests/` | Automated tests |
+| `AGENTS.md` | Rules for AI coding agents: safe commands, forbidden actions, review gates |
 | `scripts/characterize.mjs` | Optional tool that records page behaviour for comparison |
 | `docs/` | Test results, behaviour comparison and screenshots |
 
@@ -57,14 +58,17 @@ npm run build    # optional: production build into dist/
 
 - The browser time picker cannot select 24:00, so a booking ending at 1440 cannot be entered on the page (the rule is correct and tested).
 - The success message says "You can proceed to book this time", although the page only checks availability. It is kept so behaviour stays identical to the original.
-- Changing the time fields does not refresh a result already shown; press the button again.
+- Editing a time field hides the result shown before (it described the old times); press the button again to check the new times.
+- `npm audit` reports advisories in vite 5 / esbuild that affect only the local dev server (`npm run dev`). The fix needs a major vite upgrade, which is not done yet. Do not run the dev server with `--host`.
+- There is no linter, type checker or CI yet.
 - UI tests run in jsdom, which does not check visual layout. The mobile layout was checked separately in a browser.
 
 ## Versions
 
 - `8e1ad60` – Assignment #03 baseline: one room, logic in `main.js` plus a Python copy in `booking.py`.
 - `assignment-04` branch – room catalog, filters, modules and JavaScript test suite. The Python copy was removed; its 20 test cases now run against the JavaScript rules.
+- `assignment-05` branch – AGENTS.md, reason codes from `canBook`, stale-result fix (R1), Node.js version controls (R2). Evidence in `docs/evidence/a05/`.
 
 ## Tools
 
-Bolt.new and Claude (Assignment #03); Claude (Assignment #04, November 2026). All data is fictional.
+Bolt.new and Claude (Assignment #03); Claude (Assignment #04, November 2026); Claude Opus 5.5 in claude.ai (Assignment #05, 22 November 2026). All data is fictional.
