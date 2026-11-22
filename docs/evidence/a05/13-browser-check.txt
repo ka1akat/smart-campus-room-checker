@@ -1,0 +1,8 @@
+# Browser check (Playwright + Google Chrome), baseline cfedd59 served on :8101, final build on :8102
+$ python3 shots.py docs/screenshots
+before after check: Available
+before after editing to 10:00-11:00 without clicking: result hidden = False | title = Available
+before after pressing Check again: Unavailable - This overlaps with an existing booking from 10:00 to 11:00.
+after after check: Available
+after after editing to 10:00-11:00 without clicking: result hidden = True | title = Available
+after after pressing Check again: Unavailable - This overlaps with an existing booking from 10:00 to 11:00.
