@@ -31,10 +31,14 @@ export function initApp(doc, rooms, now) {
     return { attendees, equipment, error };
   }
 
-  function clearSelection() {
-    selectedId = null;
+  function clearResult() {
     hasChecked = false;
     hideResult(resultEls);
+  }
+
+  function clearSelection() {
+    selectedId = null;
+    clearResult();
   }
 
   function renderSelection() {
@@ -85,5 +89,7 @@ export function initApp(doc, rooms, now) {
   equipmentOptions.addEventListener("change", applyFilters);
   roomsList.addEventListener("change", (event) => selectRoom(event.target.value));
   byId("check-btn").addEventListener("click", runCheck);
+  // R1: a shown result describes the old times, so it must go away as soon as a time is edited.
+  for (const input of [startInput, endInput]) input.addEventListener("input", clearResult);
   applyFilters();
 }

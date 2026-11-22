@@ -127,3 +127,32 @@ test("AC6 an empty time field gives a clear message", () => {
   page.check("", "12:00");
   assert.match(page.result().message, /enter both/);
 });
+
+// Assignment 05, mitigation M1 (risk R1): a result must never describe times that are no longer in the fields.
+test("R1 editing a time field hides the previous result", () => {
+  const page = openPage();
+  page.check("12:00", "13:00");
+  assert.equal(page.result().title, "Available");
+  for (const id of ["start-time", "end-time"]) {
+    const input = page.doc.getElementById(id);
+    input.value = id === "start-time" ? "10:00" : "11:00"; // overlaps Room 301's 10:00-11:00 booking
+    input.dispatchEvent(new input.ownerDocument.defaultView.Event("input", { bubbles: true }));
+  }
+  assert.equal(page.result().hidden, true);
+});
+test("R1 after editing times, switching rooms does not bring back an old result", () => {
+  const page = openPage();
+  page.check("12:00", "13:00");
+  const start = page.doc.getElementById("start-time");
+  start.value = "10:00";
+  start.dispatchEvent(new start.ownerDocument.defaultView.Event("input", { bubbles: true }));
+  page.selectRoom("P012");
+  assert.equal(page.result().hidden, true);
+});
+test("R1 pressing the button again checks the new times", () => {
+  const page = openPage();
+  page.check("12:00", "13:00");
+  page.check("10:00", "11:00");
+  assert.equal(page.result().title, "Unavailable");
+  assert.match(page.result().message, /overlaps/);
+});
