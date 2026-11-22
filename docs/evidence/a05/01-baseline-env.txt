@@ -1,0 +1,5 @@
+# Assignment 05 baseline — commit cfedd59 (branch assignment-04), 2026-11-22T13:46:45Z
+$ node --version
+v22.23.5
+$ npm --version
+10.9.9

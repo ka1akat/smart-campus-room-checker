@@ -1,0 +1,7 @@
+$ node -p engines of installed packages
+jsdom 31.0.0 engines.node = ^22.22.2 || ^24.15.0 || >=26.0.0
+vite 5.4.21 engines.node = ^18.0.0 || >=20.0.0
+$ grep -n "Node" README.md
+47:Requires Node.js 18 or newer.
+$ grep -n engines package.json
+exit=1 (no engines field)
