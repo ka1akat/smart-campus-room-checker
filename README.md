@@ -44,10 +44,10 @@ A one-page responsive prototype: filter a small catalog of rooms by attendees an
 
 ## Setup, run and test
 
-Requires Node.js 18 or newer.
+Requires Node.js 22.22.2 or newer in the 22 line, 24.15.0+, or 26+ (jsdom 31, used by the tests, needs it). The exact range is in `engines` in `package.json`; `.nvmrc` pins 22 for `nvm use`. `.npmrc` sets `engine-strict=true`, so `npm ci` stops with a clear error on an older Node instead of failing later.
 
 ```bash
-npm install      # install Vite and jsdom
+npm ci           # install the exact versions from package-lock.json
 npm run dev      # start the page, then open the address it prints
 npm test         # run all automated tests
 npm run build    # optional: production build into dist/

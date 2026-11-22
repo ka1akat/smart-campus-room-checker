@@ -1,0 +1,10 @@
+# SIMULATION of R2 control: temp copy of package.json/.npmrc with engines.node set to >=99.0.0 to stand in for an unsupported Node (real Node 18 was not available in this environment)
+$ npm ci --ignore-scripts
+npm error code EBADENGINE
+npm error engine Unsupported engine
+npm error engine Not compatible with your version of node/npm: vite-starter@0.0.0
+npm error notsup Not compatible with your version of node/npm: vite-starter@0.0.0
+npm error notsup Required: {"node":">=99.0.0"}
+npm error notsup Actual:   {"npm":"10.9.9","node":"v22.23.5"}
+npm error A complete log of this run can be found in: /home/claude/.npm/_logs/2026-11-22T13_48_41_106Z-debug-0.log
+exit=1
