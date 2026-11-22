@@ -2,7 +2,7 @@
 // now running against the code the page really uses.
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { canBook } from "../src/logic/booking.js";
+import { canBook, REASON } from "../src/logic/booking.js";
 
 const NOW = 540;
 const EXISTING = [{ start: 600, end: 660 }];
@@ -51,4 +51,19 @@ test("AC5 checking does not change the bookings", () => {
   check(660, 720, { existing: bookings });
   check(630, 690, { existing: bookings });
   assert.deepEqual(bookings, before);
+});
+
+// Assignment 05 refactoring: every result carries a reason code, so the UI never re-checks room data.
+test("result code names the rule that decided the result", () => {
+  const code = (start, end, opts) => {
+    const { now = NOW, blocked = false, existing = EXISTING } = opts ?? {};
+    return canBook(start, end, now, blocked, existing).code;
+  };
+  assert.equal(code(660, 720), REASON.OK);
+  assert.equal(code(660, 720, { blocked: true }), REASON.BLOCKED);
+  assert.equal(code(660.5, 720), REASON.INVALID_INPUT);
+  assert.equal(code(720, 660), REASON.INVALID_RANGE);
+  assert.equal(code(540, 570), REASON.NOT_AFTER_NOW);
+  assert.equal(code(720, 841), REASON.TOO_LONG);
+  assert.equal(code(630, 690), REASON.OVERLAP);
 });

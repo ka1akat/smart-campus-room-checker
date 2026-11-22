@@ -1,5 +1,5 @@
 // Connects the page to the rules: holds the selection, reacts to events, asks render.js to draw.
-import { checkRoom } from "../logic/booking.js";
+import { checkRoom, REASON } from "../logic/booking.js";
 import { allEquipment, filterRooms, parseAttendees } from "../logic/filters.js";
 import { minutesToTime, timeToMinutes } from "../logic/time.js";
 import { hideResult, renderBookings, renderEquipmentOptions, renderRooms, showResult } from "./render.js";
@@ -65,11 +65,11 @@ export function initApp(doc, rooms, now) {
     }
     const start = timeToMinutes(startInput.value);
     const end = timeToMinutes(endInput.value);
-    const { canBook, reason } = checkRoom(room, start, end, now);
+    const { canBook, code, reason } = checkRoom(room, start, end, now);
     if (canBook) {
       showResult(resultEls, "available", "Available", `The room is free from ${minutesToTime(start)} to ${minutesToTime(end)}. You can proceed to book this time.`);
     } else {
-      showResult(resultEls, room.blocked ? "blocked" : "unavailable", "Unavailable", reason);
+      showResult(resultEls, code === REASON.BLOCKED ? "blocked" : "unavailable", "Unavailable", reason);
     }
   }
 
