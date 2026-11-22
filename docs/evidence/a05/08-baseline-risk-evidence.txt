@@ -1,0 +1,28 @@
+$ node docs/evidence/a05/risk-repro.mjs "$PWD"   (run on baseline cfedd59, read-only)
+== C1 stale result after editing the time fields (Room 301, booking 10:00-11:00)
+after check 12:00-13:00: {"hidden":false,"title":"Available","message":"The room is free from 12:00 to 13:00. You can proceed to book this time."}
+fields now: 10:00 - 11:00 (this slot overlaps the 10:00-11:00 booking)
+result still shown, no click: {"hidden":false,"title":"Available","message":"The room is free from 12:00 to 13:00. You can proceed to book this time."}
+== C2 malformed time value in the time input
+start-time value after setting '25:99': ""
+canBook(NaN, 720, ...) reason: Start, end, and now must be integer minutes.
+== C3 blocked room state is decided twice
+canBook blocked reason: The room is currently blocked and cannot be booked.
+
+$ grep -rn "innerHTML\|eval(\|insertAdjacentHTML" src main.js index.html
+(no matches, exit=1)
+
+$ grep -n "blocked" src/ui/app.js src/logic/booking.js
+src/logic/booking.js:16: *  AC3: Reject every request when the room is blocked.
+src/logic/booking.js:19:export function canBook(start, end, now, blocked, existing) {
+src/logic/booking.js:20:  if (blocked) {
+src/logic/booking.js:21:    return { canBook: false, reason: "The room is currently blocked and cannot be booked." };
+src/logic/booking.js:49:  return canBook(start, end, now, room.blocked, room.bookings);
+src/ui/app.js:72:      showResult(resultEls, room.blocked ? "blocked" : "unavailable", "Unavailable", reason);
+
+$ ls -a .github AGENTS.md CLAUDE.md .nvmrc .npmrc
+ls: cannot access '.github': No such file or directory
+ls: cannot access 'AGENTS.md': No such file or directory
+ls: cannot access 'CLAUDE.md': No such file or directory
+ls: cannot access '.nvmrc': No such file or directory
+ls: cannot access '.npmrc': No such file or directory

@@ -1,0 +1,106 @@
+[
+  {
+    "name": "touching end",
+    "start": "11:00",
+    "end": "12:00",
+    "state": "available",
+    "title": "Available",
+    "message": "The room is free from 11:00 to 12:00. You can proceed to book this time."
+  },
+  {
+    "name": "touching start",
+    "start": "09:30",
+    "end": "10:00",
+    "state": "available",
+    "title": "Available",
+    "message": "The room is free from 09:30 to 10:00. You can proceed to book this time."
+  },
+  {
+    "name": "overlap",
+    "start": "10:30",
+    "end": "11:30",
+    "state": "unavailable",
+    "title": "Unavailable",
+    "message": "This overlaps with an existing booking from 10:00 to 11:00."
+  },
+  {
+    "name": "inside existing",
+    "start": "10:15",
+    "end": "10:45",
+    "state": "unavailable",
+    "title": "Unavailable",
+    "message": "This overlaps with an existing booking from 10:00 to 11:00."
+  },
+  {
+    "name": "covers existing",
+    "start": "09:50",
+    "end": "11:10",
+    "state": "unavailable",
+    "title": "Unavailable",
+    "message": "This overlaps with an existing booking from 10:00 to 11:00."
+  },
+  {
+    "name": "exactly 120",
+    "start": "12:00",
+    "end": "14:00",
+    "state": "available",
+    "title": "Available",
+    "message": "The room is free from 12:00 to 14:00. You can proceed to book this time."
+  },
+  {
+    "name": "121 minutes",
+    "start": "12:00",
+    "end": "14:01",
+    "state": "unavailable",
+    "title": "Unavailable",
+    "message": "The booking is 121 minutes long. The maximum allowed duration is 120 minutes."
+  },
+  {
+    "name": "starts at now",
+    "start": "09:00",
+    "end": "09:30",
+    "state": "unavailable",
+    "title": "Unavailable",
+    "message": "The start time must be strictly after the current time (09:00)."
+  },
+  {
+    "name": "before now",
+    "start": "08:00",
+    "end": "08:30",
+    "state": "unavailable",
+    "title": "Unavailable",
+    "message": "The start time must be strictly after the current time (09:00)."
+  },
+  {
+    "name": "reversed",
+    "start": "12:00",
+    "end": "11:00",
+    "state": "unavailable",
+    "title": "Unavailable",
+    "message": "Please pick a valid time range: start before end, within 00:00 to 24:00."
+  },
+  {
+    "name": "zero length",
+    "start": "12:00",
+    "end": "12:00",
+    "state": "unavailable",
+    "title": "Unavailable",
+    "message": "Please pick a valid time range: start before end, within 00:00 to 24:00."
+  },
+  {
+    "name": "empty start",
+    "start": "",
+    "end": "12:00",
+    "state": "unavailable",
+    "title": "Unavailable",
+    "message": "Please enter both a start time and an end time."
+  },
+  {
+    "name": "empty end",
+    "start": "12:00",
+    "end": "",
+    "state": "unavailable",
+    "title": "Unavailable",
+    "message": "Please enter both a start time and an end time."
+  }
+]

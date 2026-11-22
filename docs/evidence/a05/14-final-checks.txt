@@ -1,0 +1,432 @@
+# Assignment 05 final checks — commit a89c0c5, 2026-11-22T13:49:19Z, node v22.23.5, npm 10.9.9
+$ npm ci
+
+added 40 packages, and audited 41 packages in 1s
+
+11 packages are looking for funding
+  run `npm fund` for details
+
+2 vulnerabilities (1 moderate, 1 high)
+
+To address all issues (including breaking changes), run:
+  npm audit fix --force
+
+Run `npm audit` for details.
+exit=0
+
+$ npm test
+
+> vite-starter@0.0.0 test
+> node --test
+
+TAP version 13
+# Subtest: AC4 touching the end of a booking is available
+ok 1 - AC4 touching the end of a booking is available
+  ---
+  duration_ms: 0.742589
+  type: 'test'
+  ...
+# Subtest: AC4 touching the start of a booking is available
+ok 2 - AC4 touching the start of a booking is available
+  ---
+  duration_ms: 0.118829
+  type: 'test'
+  ...
+# Subtest: AC4 overlapping by part of a booking is unavailable
+ok 3 - AC4 overlapping by part of a booking is unavailable
+  ---
+  duration_ms: 0.08877
+  type: 'test'
+  ...
+# Subtest: AC4 one-minute overlap at the end is unavailable
+ok 4 - AC4 one-minute overlap at the end is unavailable
+  ---
+  duration_ms: 0.06064
+  type: 'test'
+  ...
+# Subtest: AC4 one-minute overlap at the start is unavailable
+ok 5 - AC4 one-minute overlap at the start is unavailable
+  ---
+  duration_ms: 0.064696
+  type: 'test'
+  ...
+# Subtest: AC4 request inside a booking is unavailable
+ok 6 - AC4 request inside a booking is unavailable
+  ---
+  duration_ms: 0.062447
+  type: 'test'
+  ...
+# Subtest: AC4 request covering a booking is unavailable
+ok 7 - AC4 request covering a booking is unavailable
+  ---
+  duration_ms: 0.082163
+  type: 'test'
+  ...
+# Subtest: AC4 exact gap between two bookings is available
+ok 8 - AC4 exact gap between two bookings is available
+  ---
+  duration_ms: 0.083277
+  type: 'test'
+  ...
+# Subtest: AC4 overlap with the second booking is unavailable
+ok 9 - AC4 overlap with the second booking is unavailable
+  ---
+  duration_ms: 0.252467
+  type: 'test'
+  ...
+# Subtest: AC4 no bookings is available
+ok 10 - AC4 no bookings is available
+  ---
+  duration_ms: 0.198042
+  type: 'test'
+  ...
+# Subtest: AC3 blocked room rejects an otherwise valid request
+ok 11 - AC3 blocked room rejects an otherwise valid request
+  ---
+  duration_ms: 0.081606
+  type: 'test'
+  ...
+# Subtest: AC3 blocked room gives the blocked reason first
+ok 12 - AC3 blocked room gives the blocked reason first
+  ---
+  duration_ms: 0.10832
+  type: 'test'
+  ...
+# Subtest: AC2 exactly 120 minutes is available
+ok 13 - AC2 exactly 120 minutes is available
+  ---
+  duration_ms: 0.04364
+  type: 'test'
+  ...
+# Subtest: AC2 121 minutes is unavailable
+ok 14 - AC2 121 minutes is unavailable
+  ---
+  duration_ms: 0.03201
+  type: 'test'
+  ...
+# Subtest: AC1 starting exactly at now is unavailable
+ok 15 - AC1 starting exactly at now is unavailable
+  ---
+  duration_ms: 0.030567
+  type: 'test'
+  ...
+# Subtest: AC1 starting one minute after now is available
+ok 16 - AC1 starting one minute after now is available
+  ---
+  duration_ms: 0.029596
+  type: 'test'
+  ...
+# Subtest: AC1 starting before now is unavailable
+ok 17 - AC1 starting before now is unavailable
+  ---
+  duration_ms: 0.029369
+  type: 'test'
+  ...
+# Subtest: AC1 reversed times are unavailable
+ok 18 - AC1 reversed times are unavailable
+  ---
+  duration_ms: 0.028852
+  type: 'test'
+  ...
+# Subtest: AC1 zero length is unavailable
+ok 19 - AC1 zero length is unavailable
+  ---
+  duration_ms: 0.70699
+  type: 'test'
+  ...
+# Subtest: AC1 ending at 1440 is available
+ok 20 - AC1 ending at 1440 is available
+  ---
+  duration_ms: 0.073312
+  type: 'test'
+  ...
+# Subtest: AC1 ending after 1440 is unavailable
+ok 21 - AC1 ending after 1440 is unavailable
+  ---
+  duration_ms: 0.02911
+  type: 'test'
+  ...
+# Subtest: AC1 negative start is unavailable
+ok 22 - AC1 negative start is unavailable
+  ---
+  duration_ms: 0.044643
+  type: 'test'
+  ...
+# Subtest: AC1 non-integer times are unavailable
+ok 23 - AC1 non-integer times are unavailable
+  ---
+  duration_ms: 0.03024
+  type: 'test'
+  ...
+# Subtest: AC5 checking does not change the bookings
+ok 24 - AC5 checking does not change the bookings
+  ---
+  duration_ms: 0.587306
+  type: 'test'
+  ...
+# Subtest: result code names the rule that decided the result
+ok 25 - result code names the rule that decided the result
+  ---
+  duration_ms: 0.075518
+  type: 'test'
+  ...
+# Subtest: R2 package.json declares the same Node.js range that jsdom requires
+ok 26 - R2 package.json declares the same Node.js range that jsdom requires
+  ---
+  duration_ms: 0.506685
+  type: 'test'
+  ...
+# Subtest: R2 .npmrc makes npm refuse an unsupported Node.js version
+ok 27 - R2 .npmrc makes npm refuse an unsupported Node.js version
+  ---
+  duration_ms: 0.220181
+  type: 'test'
+  ...
+# Subtest: R2 .nvmrc and README name a supported version, not Node 18
+ok 28 - R2 .nvmrc and README name a supported version, not Node 18
+  ---
+  duration_ms: 1.019444
+  type: 'test'
+  ...
+# Subtest: R2 the Node.js running the tests is at least 22.22.2
+ok 29 - R2 the Node.js running the tests is at least 22.22.2
+  ---
+  duration_ms: 0.158945
+  type: 'test'
+  ...
+# Subtest: catalog has at least four fictional rooms with all required fields
+ok 30 - catalog has at least four fictional rooms with all required fields
+  ---
+  duration_ms: 0.740774
+  type: 'test'
+  ...
+# Subtest: catalog room ids are unique
+ok 31 - catalog room ids are unique
+  ---
+  duration_ms: 0.113095
+  type: 'test'
+  ...
+# Subtest: F1 capacity exactly equal to attendees is kept
+ok 32 - F1 capacity exactly equal to attendees is kept
+  ---
+  duration_ms: 0.558435
+  type: 'test'
+  ...
+# Subtest: F1 capacity one below attendees is removed
+ok 33 - F1 capacity one below attendees is removed
+  ---
+  duration_ms: 0.078463
+  type: 'test'
+  ...
+# Subtest: F1 no attendee number keeps every room
+ok 34 - F1 no attendee number keeps every room
+  ---
+  duration_ms: 0.106748
+  type: 'test'
+  ...
+# Subtest: F1 invalid attendee values give an error
+ok 35 - F1 invalid attendee values give an error
+  ---
+  duration_ms: 0.105038
+  type: 'test'
+  ...
+# Subtest: F2 room must have every selected item, not just one
+ok 36 - F2 room must have every selected item, not just one
+  ---
+  duration_ms: 0.0891
+  type: 'test'
+  ...
+# Subtest: F2 no selected items keeps every room
+ok 37 - F2 no selected items keeps every room
+  ---
+  duration_ms: 0.184082
+  type: 'test'
+  ...
+# Subtest: F1 and F2 apply together
+ok 38 - F1 and F2 apply together
+  ---
+  duration_ms: 0.174964
+  type: 'test'
+  ...
+# Subtest: equipment options come from the catalog without repeats
+ok 39 - equipment options come from the catalog without repeats
+  ---
+  duration_ms: 0.240397
+  type: 'test'
+  ...
+# Subtest: F3 a blocked room is never reported as available
+ok 40 - F3 a blocked room is never reported as available
+  ---
+  duration_ms: 0.160367
+  type: 'test'
+  ...
+# Subtest: availability uses the chosen room's bookings, not another room's
+ok 41 - availability uses the chosen room's bookings, not another room's
+  ---
+  duration_ms: 0.088162
+  type: 'test'
+  ...
+# Subtest: filtering does not change or reorder the rooms
+ok 42 - filtering does not change or reorder the rooms
+  ---
+  duration_ms: 0.136897
+  type: 'test'
+  ...
+# Subtest: catalog data cannot be changed by accident
+ok 43 - catalog data cannot be changed by accident
+  ---
+  duration_ms: 0.237637
+  type: 'test'
+  ...
+# Subtest: UI starts with all rooms, one selected, and no result
+ok 44 - UI starts with all rooms, one selected, and no result
+  ---
+  duration_ms: 75.656546
+  type: 'test'
+  ...
+# Subtest: UI shows only rooms meeting the attendee number
+ok 45 - UI shows only rooms meeting the attendee number
+  ---
+  duration_ms: 19.423514
+  type: 'test'
+  ...
+# Subtest: UI shows only rooms having all selected equipment
+ok 46 - UI shows only rooms having all selected equipment
+  ---
+  duration_ms: 19.376237
+  type: 'test'
+  ...
+# Subtest: F4 UI shows a clear empty state and hides the check form
+ok 47 - F4 UI shows a clear empty state and hides the check form
+  ---
+  duration_ms: 10.343552
+  type: 'test'
+  ...
+# Subtest: UI explains an invalid attendee number
+ok 48 - UI explains an invalid attendee number
+  ---
+  duration_ms: 11.325218
+  type: 'test'
+  ...
+# Subtest: F5 switching rooms refreshes the result using the new room's bookings
+ok 49 - F5 switching rooms refreshes the result using the new room's bookings
+  ---
+  duration_ms: 13.085164
+  type: 'test'
+  ...
+# Subtest: F5 switching rooms before any check shows no result
+ok 50 - F5 switching rooms before any check shows no result
+  ---
+  duration_ms: 11.282121
+  type: 'test'
+  ...
+# Subtest: F5 switching rooms updates the listed bookings
+ok 51 - F5 switching rooms updates the listed bookings
+  ---
+  duration_ms: 18.654449
+  type: 'test'
+  ...
+# Subtest: F5 a result disappears when its room is filtered out
+ok 52 - F5 a result disappears when its room is filtered out
+  ---
+  duration_ms: 15.85684
+  type: 'test'
+  ...
+# Subtest: F3 selecting a blocked room in the UI reports it as unavailable
+ok 53 - F3 selecting a blocked room in the UI reports it as unavailable
+  ---
+  duration_ms: 10.224254
+  type: 'test'
+  ...
+# Subtest: AC6 an empty time field gives a clear message
+ok 54 - AC6 an empty time field gives a clear message
+  ---
+  duration_ms: 8.874393
+  type: 'test'
+  ...
+# Subtest: R1 editing a time field hides the previous result
+ok 55 - R1 editing a time field hides the previous result
+  ---
+  duration_ms: 8.235658
+  type: 'test'
+  ...
+# Subtest: R1 after editing times, switching rooms does not bring back an old result
+ok 56 - R1 after editing times, switching rooms does not bring back an old result
+  ---
+  duration_ms: 15.636602
+  type: 'test'
+  ...
+# Subtest: R1 pressing the button again checks the new times
+ok 57 - R1 pressing the button again checks the new times
+  ---
+  duration_ms: 8.9024
+  type: 'test'
+  ...
+1..57
+# tests 57
+# suites 0
+# pass 57
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 687.231241
+exit=0
+
+$ npm run build
+
+> vite-starter@0.0.0 build
+> vite build
+
+vite v5.4.21 building for production...
+transforming...
+✓ 10 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                 2.89 kB │ gzip: 0.98 kB
+dist/assets/index-CTsKnVOa.css  5.97 kB │ gzip: 1.83 kB
+dist/assets/index-CTYlIQkJ.js   6.09 kB │ gzip: 2.70 kB
+✓ built in 115ms
+exit=0
+
+$ npm run lint
+npm error Missing script: "lint"
+npm error
+npm error Did you mean this?
+npm error   npm link # Symlink a package folder
+npm error
+npm error To see a list of scripts, run:
+npm error   npm run
+npm error A complete log of this run can be found in: /home/claude/.npm/_logs/2026-11-22T13_49_21_763Z-debug-0.log
+exit=1
+
+$ npm audit
+# npm audit report
+
+esbuild  <=0.24.2
+Severity: moderate
+esbuild enables any website to send any requests to the development server and read the response - https://github.com/advisories/GHSA-67mh-4wv8-2f99
+fix available via `npm audit fix --force`
+Will install vite@8.3.8, which is a breaking change
+node_modules/esbuild
+  vite  <=6.4.3
+  Depends on vulnerable versions of esbuild
+  node_modules/vite
+
+
+2 vulnerabilities (1 moderate, 1 high)
+
+To address all issues (including breaking changes), run:
+  npm audit fix --force
+exit=1
+
+$ node docs/evidence/a05/risk-repro.mjs "$PWD"
+== C1 stale result after editing the time fields (Room 301, booking 10:00-11:00)
+after check 12:00-13:00: {"hidden":false,"title":"Available","message":"The room is free from 12:00 to 13:00. You can proceed to book this time."}
+fields now: 10:00 - 11:00 (this slot overlaps the 10:00-11:00 booking)
+result still shown, no click: {"hidden":true,"title":"Available","message":"The room is free from 12:00 to 13:00. You can proceed to book this time."}
+== C2 malformed time value in the time input
+start-time value after setting '25:99': ""
+canBook(NaN, 720, ...) reason: Start, end, and now must be integer minutes.
+== C3 blocked room state is decided twice
+canBook blocked reason: The room is currently blocked and cannot be booked.
