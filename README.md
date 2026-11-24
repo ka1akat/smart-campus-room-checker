@@ -1,5 +1,9 @@
 # Smart Campus Room Availability Checker
 
+> **Practice #12 (Lesson 12, code-based vs low-code):** single-room checker with start time + duration on
+> `availability.html` (logic in `src/contract/`, tests `tests/contract*.test.js`), Appsmith JSObject in
+> `lowcode/appsmith/Checker.js`, evidence in `docs/evidence/a12/`. Run `npm run dev` and open `/availability.html`.
+
 Software Engineering – Assignment #05 (KBTU), continuing Assignments #03–#04
 Student: Zhaslan Karakat (24B031781)
 
@@ -67,6 +71,7 @@ npm run build    # optional: production build into dist/
 
 - `8e1ad60` – Assignment #03 baseline: one room, logic in `main.js` plus a Python copy in `booking.py`.
 - `assignment-04` branch – room catalog, filters, modules and JavaScript test suite. The Python copy was removed; its 20 test cases now run against the JavaScript rules.
+- `assignment-12` branch – Practice #12: shared contract (start + duration, blocked flag, reason codes), code-based page `availability.html`, tests T1–T8, Appsmith script for the low-code version.
 - `assignment-05` branch – AGENTS.md, reason codes from `canBook`, stale-result fix (R1), Node.js version controls (R2). Evidence in `docs/evidence/a05/`.
 
 ## Tools

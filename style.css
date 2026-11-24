@@ -408,3 +408,24 @@ section h2 {
     padding: 16px;
   }
 }
+
+/* Practice 12: single-room checker page */
+.field select {
+  width: 100%;
+  font-family: inherit;
+  font-size: 1rem;
+  padding: 12px 14px;
+  border: 1px solid var(--neutral-300);
+  border-radius: 8px;
+  color: var(--neutral-900);
+  background: #fff;
+}
+.check-form > .field { margin-bottom: 16px; }
+.result-code {
+  margin-top: 6px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.8rem;
+  opacity: 0.75;
+}
+.page-link { margin-top: 20px; font-size: 0.9rem; text-align: center; }
+.page-link a { color: inherit; }

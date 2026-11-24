@@ -1,0 +1,16 @@
+
+> vite-starter@0.0.0 build
+> vite build
+
+vite v5.4.21 building for production...
+transforming...
+✓ 16 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/availability.html                2.69 kB │ gzip: 0.97 kB
+dist/index.html                       3.10 kB │ gzip: 1.07 kB
+dist/assets/booking-BpYNYmhu.css      6.38 kB │ gzip: 1.94 kB
+dist/assets/booking-vMImwt4M.js       2.81 kB │ gzip: 1.38 kB
+dist/assets/availability-BUxF63CC.js  2.83 kB │ gzip: 1.28 kB
+dist/assets/main-CNPo6DUC.js          3.42 kB │ gzip: 1.60 kB
+✓ built in 169ms
