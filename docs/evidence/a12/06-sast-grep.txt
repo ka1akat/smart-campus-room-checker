@@ -1,0 +1,3 @@
+$ grep -rn "innerHTML\|eval(\|document.write" src lowcode
+src/contract/ui.js:2:// No booking rule lives here. Text is written with textContent only (no innerHTML), so input cannot inject HTML.
+Result: the only match is a comment that says innerHTML is NOT used. No unsafe DOM sinks in code.
